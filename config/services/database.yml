@@ -5,7 +5,7 @@ services:
       - { name: drupal.command }
   console.database_dump:
     class: Drupal\Console\Command\Database\DumpCommand
-    arguments: ['@app.root', '@console.shell_process', '@database']
+    arguments: ['%app.root%', '@console.shell_process', '@database']
     tags:
       - { name: drupal.command }
   console.database_log_clear:

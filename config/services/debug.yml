@@ -62,7 +62,7 @@ services:
       - { name: drupal.command }
   console.libraries_debug:
     class: Drupal\Console\Command\Debug\LibrariesCommand
-    arguments: ['@module_handler', '@theme_handler', '@library.discovery', '@app.root']
+    arguments: ['@module_handler', '@theme_handler', '@library.discovery', '%app.root%']
     tags:
       - { name: drupal.command }
   console.module_debug:
@@ -97,7 +97,7 @@ services:
       - { name: drupal.command }
   console.breakpoints_debug:
     class: Drupal\Console\Command\Debug\BreakpointsCommand
-    arguments: ['@?breakpoint.manager', '@app.root']
+    arguments: ['@?breakpoint.manager', '%app.root%']
     tags:
       - { name: drupal.command }
   console.cache_context_debug:
@@ -120,7 +120,7 @@ services:
       - { name: drupal.command }
   console.multisite_debug:
     class: Drupal\Console\Command\Debug\MultisiteCommand
-    arguments: ['@app.root']
+    arguments: ['%app.root%']
     tags:
       - { name: drupal.command }
   console.migrate_debug:

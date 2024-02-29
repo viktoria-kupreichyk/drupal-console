@@ -10,7 +10,7 @@ services:
       - { name: drupal.command }
   console.snippet:
     class: Drupal\Console\Command\SnippetCommand
-    arguments: ['@console.root', '@app.root']
+    arguments: ['@console.root', '%app.root%']
     tags:
       - { name: drupal.command }
   console.composerize:
