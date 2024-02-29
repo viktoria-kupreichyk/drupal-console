@@ -197,14 +197,14 @@ class Drupal implements DrupalInterface
 
             $container->set(
                 'console.root',
-                $this->drupalFinder->getComposerRoot()
+                (object)$this->drupalFinder->getComposerRoot()
             );
 
             AnnotationRegistry::registerLoader([$this->autoload, "loadClass"]);
 
             $container->set(
                 'console.configuration_manager',
-                $this->configurationManager
+                (object)$this->configurationManager
             );
 
             $container->get('console.translator_manager')
@@ -228,7 +228,7 @@ class Drupal implements DrupalInterface
 
             $container->set(
                 'console.cache_key',
-                $drupalKernel->getContainerKey()
+                (object)$drupalKernel->getContainerKey()
             );
 
             return $container;
